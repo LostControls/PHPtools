@@ -1,5 +1,5 @@
 {
-    "name": "lostcontrols\/php-tools",
+    "name": "lostcontrols/php-tools",
     "description": "A custom PHP tool class that categorizes the methods commonly used in project development",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,10 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Lostcontrols\/PHPtools\\": "./src"
-        }
+            "Lostcontrols\\PHPtools\\": "./src"
+        },
+        "files": [
+            "helpers.php"
+        ]
     }
 }
