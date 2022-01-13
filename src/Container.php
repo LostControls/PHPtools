@@ -117,21 +117,24 @@ class Container
 
         //以下是为了获取 $method 方法的参数
         try {
+            $diParams = [];
             // 通过反射实例，获取 $class 类的相关方法和属性等
             // $reflector = new \ReflectionClass($class);
             // 获取方法
             // $reflectorMethod = $reflector->getMethod($method)->getParameters();
-             $diParams = [];
             // 查找方法的形参
-            /** oreach ($reflectorMethod as $param) {
-                $_class = $param->getClass();
-                if ($_class) {
-                    $singleton = self::getSingleton($_class->name);
-                    $diParams[] = $singleton ?: self::getInstance($_class->name);
-                }
-            }*/
+//            foreach ($reflectorMethod as $param) {
+//                $_class = $param->getClass();
+//                if ($_class) {
+//                    $singleton = self::getSingleton($_class->name);
+//                    $diParams[] = $singleton ?: self::getInstance($_class->name);
+//                }
+//            }
+            $param = is_string($params)
+                ? explode(',',$params)
+                : array_merge($diParams, $params);
 
-            return call_user_func_array([$instance, $method], array_merge($diParams, $params));
+            return call_user_func_array([$instance, $method], $param);
         } catch (\ReflectionException $e) {
             throw new \ReflectionException($e->getMessage());
         }
