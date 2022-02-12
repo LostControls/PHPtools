@@ -7,7 +7,7 @@ namespace Lostcontrols\PHPtools;
 
 require_once '../vendor/autoload.php';
 
-use Lostcontrols\PHPtools\Filter\Filter;
+use Lostcontrols\PHPtools\Redis\Redis;
 
 ///** @noinspection PhpUnhandledExceptionInspection */
 //$b = callToolsMethod(BcryptHash::class, 'generate', '557184');
@@ -18,8 +18,8 @@ use Lostcontrols\PHPtools\Filter\Filter;
 //    'age' => 30,
 //    'address' => '长沙'
 //];
-$param = ['你是不是傻X玩意',3,2,true,'*'];
+//$param = ['你是不是傻X玩意'];
 /** @noinspection PhpUnhandledExceptionInspection */
-$res = callToolsMethod(Filter::class,'filter', $param);
+$res = callToolsMethod(new Redis([],[]),'test', []);
 //$res = new Filter();
 dd($res);
