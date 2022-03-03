@@ -7,7 +7,7 @@ namespace Lostcontrols\PHPtools;
 
 require_once '../vendor/autoload.php';
 
-use Lostcontrols\PHPtools\Redis\Redis;
+use Lostcontrols\PHPtools\BaiDuFanYi\Translation;
 
 ///** @noinspection PhpUnhandledExceptionInspection */
 //$b = callToolsMethod(BcryptHash::class, 'generate', '557184');
@@ -19,7 +19,8 @@ use Lostcontrols\PHPtools\Redis\Redis;
 //    'address' => '长沙'
 //];
 //$param = ['你是不是傻X玩意'];
+
 /** @noinspection PhpUnhandledExceptionInspection */
-$res = callToolsMethod(new Redis([],[]),'test', []);
-//$res = new Filter();
+$res = callToolsMethod(Translation::class,'translate', '你好啊,zh,en');
+//$res = (new Translation())->translate('apple','en','zh');
 dd($res);
