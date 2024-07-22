@@ -21,6 +21,6 @@ use Lostcontrols\PHPtools\BaiDuFanYi\Translation;
 //$param = ['你是不是傻X玩意'];
 
 /** @noinspection PhpUnhandledExceptionInspection */
-$res = callToolsMethod(Translation::class,'translate', '你好啊,zh,en');
+$res = callToolsMethod(Translation::class,'translate', '今天晚上吃什么呢,zh,en');
 //$res = (new Translation())->translate('apple','en','zh');
 dd($res);
